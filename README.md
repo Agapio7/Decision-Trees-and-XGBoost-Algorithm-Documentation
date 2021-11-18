@@ -16,7 +16,8 @@
 ## Brief illustration on how gradient tree boosting works
 
 ![image](https://user-images.githubusercontent.com/91752852/142379264-f5141ccb-0eb3-42e8-aae3-822c811e856d.png)
-Source: 
+ 
+ Fig 1: Brief illustration on how gradient tree boosting works Source:[Amazon SageMaker Developer Guide](https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-HowItWorks.html)
 
 ## XGBoost Features
 
@@ -79,9 +80,9 @@ The library provides a system for use in a range of computing environments.
 * XGBoost is almost always faster than the other benchmarked implementations from R, Python Spark and H2O 
 * It is really 10 times faster when compared to the other algorithms.
 
-    
+![image](https://user-images.githubusercontent.com/91752852/142382371-a4397021-2f36-4e18-9ae9-68df1c2e3bb9.png)
 
-Fig: Benchmark Performance of XGBoost (Source: Benchmarking Random Forest Implementations)
+Fig 2: Benchmark Performance of XGBoost Source: [Benchmarking Random Forest Implementations.](http://datascience.la/benchmarking-random-forest-implementations/) 
 
 ### High Model Performance: 
 * XGBoost dominates structured or tabular datasets on classification and regression predictive modelling problems.
@@ -105,29 +106,13 @@ XGBoost is an open source package which is portable and reusable.
 
 **Command line parameters** relate to behavior of CLI version of XGBoost.
 
-
-
-## How to Use Sage Maker XGBoost?
+## How to Use  XGBoost on Sage Maker ?
 
  We can use XGBoost in SageMaker in built-in algorithm or framework.
 .
-
-
-
-
-
-
-
-
-# Amazon Sage Maker on  XGBoost 
-
- We can use XGBoost in SageMaker by using built-in algorithm or framework.
-
-
 ## Use XGBoost as a framework
 
 In the following example.Python SDK provides the XGBoost API as a framework while it provides other framework APIs, such as TensorFlow, MXNet, and PyTorch.
-
 
 ### SageMaker Python SDK 1
 ```bash
