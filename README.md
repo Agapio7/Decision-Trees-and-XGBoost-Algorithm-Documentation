@@ -50,17 +50,52 @@
 * The main problem in tree learning is to find the best split. 
 * This algorithm enumerates over all the possible splits on all the features. 
 * It is computationally demanding to enumerate all the possible splits for continuous features.
+* In order to do so efficiently, the algorithm must first sort the data according to feature values and visit the data in sorted order to accumulate the gradient statistics for the structure score .
+* A split finding algorithm enumerates over all the possible splits on all the features. We call this the exact greedy algorithm.
+* Most existing single machine tree boosting implementations, such as scikit-learn, R’s gbm as well as the single
+machine version of XGBoost support the exact greedy algorithm.
 #### Approximate Algorithm:
 * The exact greedy algorithm enumerates over all possible splitting points greedily but it is not possible when the data does not fit entirely into memory. 
 * It proposes candidate splitting points according to percentiles of feature distribution. 
 * The algorithm then plans the continuous features into buckets split by these candidate points, aggregates the statistics and search for the best solution among proposals based on the aggregated statistics.
+* To support effective gradient tree boosting in these two settings, an approximate algorithm is needed.
+* To summarize, the algorithm first proposes candidate splitting points according to percentiles of feature distribution. The
+algorithm then maps the continuous features into buckets split by these candidate points, aggregates the statistics and finds the best solution among proposals based on the
+aggregated statistics.
+* There are two variants of the algorithm based on the proposal is passed .The global variant proposes all the candidate splits during the initial phase of tree construction, and uses the same proposals for split finding at all levels. The local variant re-proposes after each split. The global method requires less proposal steps than the local method.
+* However, usually more candidate points are needed for the global proposal because candidates are not refined after each
+split. The local proposal refines the candidates after splits, and can potentially be more appropriate for deeper trees. A comparison of different algorithms on a Higgs boson dataset.We find that the local proposal indeed requires fewer candidates. The global proposal can be as accurate as the local one given enough candidates.
+* Most existing approximate algorithms for distributed tree learning also follow this framework. Notably, it is also possible to directly construct approximate histograms of gradient statistics.
+* We can also use other variants of binning strategies instead of quantile. Quantile strategy benefit from being distributable and recomputable, which
+will detail in next subsection that the quantile strategy can get the same accuracy as exact greedy given reasonable approximation level.
+* Our system efficiently supports exact greedy for the single machine setting, as well as approximate algorithm with both local and global proposal methods for all settings. Users can freely choose between the methods according to their necessities.
 #### Weighted Quantile Sketch: 
 * One important theme in the approximate algorithm is to propose candidate split points. 
 * XGBoost has a distributed weighted quantile sketch algorithm to effectively handle weighted data.
+* For large datasets, it is non-trivial to find candidate splits that satisfy the criteria. 
+* When every instance has equal weights, an existing algorithm called quantile sketch  solves the problem. 
+* However, there is no existing quantile sketch for the weighted datasets. 
+* Since, most existing approximate algorithms either resorted to sorting on a random subset of data which have a chance of failure or heuristics that do not have theoretical guarantee.
+* A novel distributed weighted quantile sketch algorithm  is used that can handle weighted data with a provable theoretical guarantee. 
+* The general idea is to propose a data structure that supports merge and prune operations, with each operation proven to maintain a certain accuracy level.
 
 #### Sparsity-aware Split Finding: 
-* there are many spare such as missing values in the data, frequent zero entries in the statistics and artifacts of feature engineering such as one-hot encoding.
+
 * XGBoost obviously admits sparse features for inputs by automatically ‘learning’ best missing value depending on training loss and handles all sparsity patterns in a unified way.
+* In many real-world problems, it is quite common for the input x to be sparse. There are multiple possible causes for sparsity: 1) presence of missing values in the data; 2)
+frequent zero entries in the statistics; and, 3) artifacts of feature engineering such as one-hot encoding.
+* It is important to make the algorithm aware of the sparsity pattern in the data. In order to do so, we propose to add a default direction in each tree node. When a value is missing in the sparse matrix x, the instance is classified into the default direction. 
+* There are two choices of default direction in each branch. The optimal default directions are learnt from the data. The key improvement is to only visit the non-missing
+entries.
+* The presented algorithm treats the non-presence as a missing value and learns the best direction to handle missing values. The same algorithm can also be applied when the non-presence corresponds to a user specified value by limiting the enumeration only to consistent solutions.
+* Most existing tree learning algorithms are either only optimized for dense data, or need specific procedures to handle limited cases such as categorical encoding.
+* XGBoost handles all sparsity patterns in a unified way. More importantly, our method exploits the sparsity to make computation complexity linear to number of non-missing entries in the input. 
+* The sparsity aware algorithm runs 50 times faster than the naive version whcih aware about its value as shown in figure.
+
+![Impact of the sparsity aware algorithm](https://user-images.githubusercontent.com/91752852/142404069-bb324d17-a897-4144-8b1f-9ef1acce27f3.png)
+
+Fig 2: Impact of the sparsity aware algorithm on Allstate-10K.(Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
+))
 
 
 ## System Optimization
@@ -68,24 +103,60 @@
 The library provides a system for use in a range of computing environments.
 
 **Parallelization** of tree construction using all of your CPU cores during training.
+* XGBoost follows the process of sequential tree building using parallelized implementation. 
+* Becaus of  interchangeable nature of loops used for building base learners; the outer loop that enumerates the leaf nodes of a tree, and the second inner loop that calculates the features. 
+* This nesting of loops limits parallelization because without completing the inner loop (more computationally demanding of the two), the outer loop cannot be started. Therefore, to improve run time, the order of loops is interchanged using initialization through a global scan of all instances and sorting using parallel threads. 
+* This switch improves algorithmic performance by offsetting any parallelization overheads in computation
 
 **Distributed Computing** for training very large models using a cluster of machines. XGBoost is able to handle the entire
 1.7 billion data with only four machines. This shows the
 system’s potential to handle even larger data.
 ![Comparison of different distributed systems ](https://user-images.githubusercontent.com/91752852/142390557-c38d7d01-61ab-4fef-98e7-40d494b9df82.png)
  
-Fig 2 Comparison of different distributed systems on 32 EC2 nodes for 10 iterations on different subset of criteo data (Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
+Fig 3: Comparison of different distributed systems on 32 EC2 nodes for 10 iterations on different subset of criteo data (Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
 ))
 
 ![Scaling of XGBoost with different number of machines on criteo full 1 7 billion dataset](https://user-images.githubusercontent.com/91752852/142392340-3e45d2a2-9288-4fb1-8c44-ffd4cf4d6d59.png)
 
-Fig 3 Scaling of XGBoost with different number of machines on criteo full 1.7 billion dataset(Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
+Fig 4 :Scaling of XGBoost with different number of machines on criteo full 1.7 billion dataset(Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
 ))
 
-**Out-of-Core Computing** optimizes available disk space while handling big data-frames that do not fit into memory.
+**Out-of-Core Computing** 
+* It optimizes available disk space while handling big data-frames that do not fit into memory.
+* One goal of sysyetm is to fully utilize a machine’s resources to achieve scalable learning. Besides processors and memory, it is important to utilize disk space to handle data that does not fit into main memory. 
+* To enable out-of-core computation,  the data is divided into multiple blocks and store each block on disk. 
+* During computation, it is important to use an independent thread to pre-fetch the block into a main memory buffer, so computation can happen in concurrence with disk reading. However, this does not entirely solve the problem since the disk reading takes most of the
+computation time. 
+* It is important to reduce the overhead and increase the throughput of disk IO. Two  techniques are mainly used  to improve the out-of-core computation.
 
-**Cache Optimization** of data structures and algorithm to make best use of hardware to store gradient statistics.
+**Block Compression**
+* The first method is  block compression. The block is compressed by columns, and decompressed on the fly by an independent thread when loading into main memory. 
+This helps to trade some of the computation in decompression with the disk reading cost.
+* We use a general purpose compression algorithm for compressing the features values. For the row index, we substract the row index by the begining index of the block and use a 16bit integer to store each offset. 
+* This requires 216 examples per block, which is confirmed to be a good setting. In most of the dataset we tested, we achieve roughly a 26% to 29% compression ratio.
+ 
+**Block Sharding**
+* The second technique is to shard the data onto multiple disks in an alternative manner. A pre-fetcher thread is assigned to each disk and fetches the data into an
+in-memory buffer. 
+* The training thread then alternatively reads the data from each buffer whcih helps to increase the throughput of disk reading when multiple disks are available.
 
+**Cache Optimization** 
+ * Data structures and algorithm to make best use of hardware to store gradient statistics.
+* While the proposed block structure helps optimize the computation complexity of split finding, the new algorithm requires indirect fetches of gradient statistics by row index, since these values are accessed in order of feature. This is a non-continuous memory access. 
+* A naive implementation of split enumeration introduces immediate read/write dependency between the accumulation and the non-continuous memory fetch operation.
+* It slow down split finding when the gradient statistics do not fit into CPU cache and cache miss occur. For the exact greedy algorithm, we can alleviate the problem by a cache-aware prefetching algorithm. 
+* Specifically, we allocate an internal buffer in each thread, fetch the gradient statistics into it, and then perform accumulation in a mini-batch manner.
+* This prefetching changes the direct read/write dependency to a longer dependency and it helps to reduce the runtime overhead when number of rows in the is large. 
+* Cache-aware implementation of the exact greedy algorithm runs twice as fast as the naive version when the dataset is large.
+* For approximate algorithms, we solve the problem by choosing a correct block size. We define the block size to be maximum number of examples in contained in a block, as this
+reflects the cache storage cost of gradient statistics.
+* Choosing an overly small block size results in small workload for each thread and leads to inefficient parallelization. 
+* On the other hand, overly large blocks result in cache misses, as the gradient statistics do not fit into the CPU cache. A good choice of block size balances these two factors.
+
+![Impact of cache-aware prefetching in exact greedy algorithm](https://user-images.githubusercontent.com/91752852/142407659-5dd0cbe6-dd0b-4c2d-95e4-cc28ca04f35b.png)
+ 
+Fig 5:  Impact of cache-aware prefetching in exact greedy algorithm (Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
+)
 **Block structure for Parallel Learning**: 
 * XGBoost can make use of multiple cores on the CPU for faster computing. 
 * This is due to block architecture in its system design. 
@@ -97,7 +168,7 @@ Fig 3 Scaling of XGBoost with different number of machines on criteo full 1.7 bi
 
 ![Block Structure](https://user-images.githubusercontent.com/91752852/142387504-179600fc-ad34-4dba-a261-a32ea53a61cb.png)
 
-Fig 4:Block structure for parallel learning(Source:[XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785))
+Fig 6:Block structure for parallel learning(Source:[XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785))
 
 ## Goal of XGBOOST
 
@@ -107,7 +178,7 @@ Fig 4:Block structure for parallel learning(Source:[XGBoost: A Scalable Tree Boo
 
 ![image](https://user-images.githubusercontent.com/91752852/142382371-a4397021-2f36-4e18-9ae9-68df1c2e3bb9.png)
 
-Fig 5: Benchmark Performance of XGBoost Source: [Benchmarking Random Forest Implementations.](http://datascience.la/benchmarking-random-forest-implementations/) 
+Fig 7: Benchmark Performance of XGBoost Source: [Benchmarking Random Forest Implementations.](http://datascience.la/benchmarking-random-forest-implementations/) 
 
 ### High Model Performance: 
 * XGBoost dominates structured or tabular datasets on classification and regression predictive modelling problems.
