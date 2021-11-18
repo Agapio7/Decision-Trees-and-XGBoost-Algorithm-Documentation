@@ -21,6 +21,16 @@
 
 ## XGBoost Features
 
+![Features in XGBoost for optimization](https://user-images.githubusercontent.com/91752852/142411564-45e61816-2d39-4bc8-bf9c-45f3f09f89de.png)
+
+Fig  Features in XGBoost for optimization (Source: [Comparative Analysis of Artificial Neural
+Network and XGBoost Algorithm for
+PolSAR Image Classification](https://www.researchgate.net/profile/Dhruvesh-Patel-3/publication/337487611_Comparative_Analysis_of_Artificial_Neural_Network_and_XGBoost_Algorithm_for_PolSAR_Image_Classification/links/5dedd44492851c83646e1141/Comparative-Analysis-of-Artificial-Neural-Network-and-XGBoost-Algorithm-for-PolSAR-Image-Classification.pdf))
+
+
+
+
+
 ### Regularized Learning: 
 
 * It penalizes more complex models through both LASSO (L1) and Ridge (L2) regularization to prevent overfitting.
