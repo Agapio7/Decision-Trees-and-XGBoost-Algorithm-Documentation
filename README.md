@@ -12,6 +12,11 @@
 ## Origin of XGBOOST
 * The term “Gradient Boosting” was coined by Jerome H. Friedman from his paper Greedy Function Approximation: A Gradient Boosting Machine.
 
+## Brief illustration on how gradient tree boosting works
+
+![image](https://user-images.githubusercontent.com/91752852/142379264-f5141ccb-0eb3-42e8-aae3-822c811e856d.png)
+Source: 
+
 ## XGBoost Features
 
 ### Regularized Learning: 
