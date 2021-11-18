@@ -733,3 +733,10 @@ After completion, we can run the delete_endpoint line in the cell as given. It w
 ```bash
 predictor.delete_endpoint()
 ```
+# Research Papers on XGBOOST 
+
+* [Forecasting gold price with the XGBoost algorithm and SHAP
+interaction values ](https://sci-hub.st/10.1007/s10479-021-04187-w): The utilization of XGBoost and SHAP approach could pro‑
+vide a signifcant boost in increasing the gold price forecasting performance.
+* [Model Research on Forecast of Second-Hand House Price in Chengdu Based on XGboost Algorithm](https://ieeexplore.ieee.org/abstract/document/8935894) : the accuracy of XGboost prediction is the highest with 0.9251 cCompared with linear regression and decision tree model, XGboost algorithm has better generalization ability and robustness in data prediction.
+* [SubMito-XGBoost: predicting protein submitochondrial localization by fusing multiple feature information and eXtreme gradient boosting ](https://academic.oup.com/bioinformatics/article/36/4/1074/5585744)The prediction accuracies of the SubMito-XGBoost method on the two training datasets M317 and M983 were 97.7% and 98.9%, which are 2.8–12.5% and 3.8–9.9% higher than other methods, respectively and also independent test set M495 was 94.8%, which is significantly better than the existing studies.
