@@ -69,7 +69,18 @@ The library provides a system for use in a range of computing environments.
 
 **Parallelization** of tree construction using all of your CPU cores during training.
 
-**Distributed Computing** for training very large models using a cluster of machines.
+**Distributed Computing** for training very large models using a cluster of machines. XGBoost is able to handle the entire
+1.7 billion data with only four machines. This shows the
+system’s potential to handle even larger data.
+![Comparison of different distributed systems ](https://user-images.githubusercontent.com/91752852/142390557-c38d7d01-61ab-4fef-98e7-40d494b9df82.png)
+ 
+Fig 2 Comparison of different distributed systems on 32 EC2 nodes for 10 iterations on different subset of criteo data (Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
+))
+
+![Scaling of XGBoost with different number of machines on criteo full 1 7 billion dataset](https://user-images.githubusercontent.com/91752852/142392340-3e45d2a2-9288-4fb1-8c44-ffd4cf4d6d59.png)
+
+Fig 3 Scaling of XGBoost with different number of machines on criteo full 1.7 billion dataset(Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
+))
 
 **Out-of-Core Computing** optimizes available disk space while handling big data-frames that do not fit into memory.
 
@@ -79,7 +90,7 @@ The library provides a system for use in a range of computing environments.
 
 ![Block Structure](https://user-images.githubusercontent.com/91752852/142387504-179600fc-ad34-4dba-a261-a32ea53a61cb.png)
 
-Fig 2:Block structure for parallel learning(Source:[XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785))
+Fig 4:Block structure for parallel learning(Source:[XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785))
 
 ## Goal of XGBOOST
 
@@ -89,7 +100,7 @@ Fig 2:Block structure for parallel learning(Source:[XGBoost: A Scalable Tree Boo
 
 ![image](https://user-images.githubusercontent.com/91752852/142382371-a4397021-2f36-4e18-9ae9-68df1c2e3bb9.png)
 
-Fig 3: Benchmark Performance of XGBoost Source: [Benchmarking Random Forest Implementations.](http://datascience.la/benchmarking-random-forest-implementations/) 
+Fig 5: Benchmark Performance of XGBoost Source: [Benchmarking Random Forest Implementations.](http://datascience.la/benchmarking-random-forest-implementations/) 
 
 ### High Model Performance: 
 * XGBoost dominates structured or tabular datasets on classification and regression predictive modelling problems.
