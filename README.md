@@ -10,7 +10,7 @@
 *  XGBoost is used for regression, classification (binary and multiclass), and ranking problems.
 
 ## Origin of XGBOOST
-* The term “Gradient Boosting” was coined by Jerome H. Friedman from his paper Greedy Function Approximation: A Gradient Boosting Machine.
+* The term “Gradient Boosting” was coined by Jerome H. Friedman from his paper [Greedy Function Approximation: A Gradient Boosting Machine.](https://www.semanticscholar.org/paper/Greedy-function-approximation%3A-A-gradient-boosting-Friedman/1679beddda3a183714d380e944fe6bf586c083cd)
 * XGBoost algorithm was developed by [Tianqi Chen and Carlos Guestrin](https://arxiv.org/pdf/1603.02754.pdf)  as a research project at the University of Washington at  SIGKDD Conference in 2016.
 
 ## Brief illustration on how gradient tree boosting works
