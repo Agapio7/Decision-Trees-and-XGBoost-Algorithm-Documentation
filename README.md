@@ -34,6 +34,7 @@
 
 ### Shrinkage and Column Subsampling: 
 * Two additional techniques Shrinkage and Column Subsampling are used after regularization objective to further prevent overfitting.
+
 #### Shrinkage Subsampling
 * Shrinkage scales newly added weights by a factor η after each step of tree boosting. 
 * Similar to a learning rate in stochastic optimization, shrinkage reduces the influence of each tree and leaves space for future trees to improve the model. 
@@ -41,6 +42,8 @@
 * Column (feature) subsampling uses Random Forest. 
 * Column sub-sampling prevents over-fitting even more so than the traditional row sub-sampling. 
 * Column sub-samples also boosts up computations of the parallel algorithm.
+* According to user feedback, using column sub-sampling prevents over-fitting even more so than the traditional row sub-sampling (which is also supported).
+
 
 ### SPLITTING ALGORITHMS
 #### Exact Greedy Algorithm: 
@@ -74,6 +77,10 @@ The library provides a system for use in a range of computing environments.
 
 **Block structure for Parallel Learning**: XGBoost can make use of multiple cores on the CPU for faster computing. This is due to block architecture in its system design. Data is sorted and stored in in-memory units called blocks.
 
+![Block Structure](https://user-images.githubusercontent.com/91752852/142387504-179600fc-ad34-4dba-a261-a32ea53a61cb.png)
+
+Fig 2:Block structure for parallel learning(Source:[XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785))
+
 ## Goal of XGBOOST
 
 ### Execution Speed: 
@@ -82,7 +89,7 @@ The library provides a system for use in a range of computing environments.
 
 ![image](https://user-images.githubusercontent.com/91752852/142382371-a4397021-2f36-4e18-9ae9-68df1c2e3bb9.png)
 
-Fig 2: Benchmark Performance of XGBoost Source: [Benchmarking Random Forest Implementations.](http://datascience.la/benchmarking-random-forest-implementations/) 
+Fig 3: Benchmark Performance of XGBoost Source: [Benchmarking Random Forest Implementations.](http://datascience.la/benchmarking-random-forest-implementations/) 
 
 ### High Model Performance: 
 * XGBoost dominates structured or tabular datasets on classification and regression predictive modelling problems.
