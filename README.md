@@ -86,7 +86,14 @@ Fig 3 Scaling of XGBoost with different number of machines on criteo full 1.7 bi
 
 **Cache Optimization** of data structures and algorithm to make best use of hardware to store gradient statistics.
 
-**Block structure for Parallel Learning**: XGBoost can make use of multiple cores on the CPU for faster computing. This is due to block architecture in its system design. Data is sorted and stored in in-memory units called blocks.
+**Block structure for Parallel Learning**: 
+* XGBoost can make use of multiple cores on the CPU for faster computing. 
+* This is due to block architecture in its system design. 
+* Data is sorted and stored in in-memory units called blocks.
+* Different blocks can be distributed across machines, or stored on disk in the out-of-core setting.
+* The block structure also helps when using the approximate algorithms.
+* Using the sorted structure, the quantile finding step becomes a linear scan over the sorted columns. This is especially valuable for local proposal algorithms, where candidates are generated frequently at each branch.
+* Column block structure also supports column subsampling, as it is easy to select a subset of columns in a block.
 
 ![Block Structure](https://user-images.githubusercontent.com/91752852/142387504-179600fc-ad34-4dba-a261-a32ea53a61cb.png)
 
