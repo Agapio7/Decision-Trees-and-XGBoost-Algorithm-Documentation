@@ -9,7 +9,7 @@ Some advantages of decision trees are:
 
 * They are simple to understand,interpret and visualised.
 
-* They requires little data preparation. Other techniques often require data normalisation, dummy variables need to be created and blank values to be removed.While this module does not support missing values.
+* They requires little data preparation. Any missing value present in the data does not affect a decision tree.So,it is considered a flexible algorithm.
 
 * The cost of using the tree (i.e., predicting data) is logarithmic in the number of data points used to train the tree.
 
@@ -25,7 +25,7 @@ Disadvantages of Decison tree
 
 * Decision-tree learners can create over-complex trees that do not generalise the data well which  is called overfitting.
 
-* Decision trees can be unstable because small variations in the data might result in a completely different tree being generated. 
+* A decision tree is sometimes unstable and cannot be reliable as alteration in data can cause a decision tree go in a bad structure which may affect the accuracy of the model.
 
 * Predictions of decision trees are neither smooth nor continuous, but piecewise constant approximations. Therefore, they are not good at extrapolation.
 
@@ -36,6 +36,36 @@ Disadvantages of Decison tree
 * Decision tree learners create biased trees if some classes dominate. It is therefore recommended to balance the dataset prior to fitting with the decision tree.
 
 
+## Decision Tree structure
+
+![image](https://user-images.githubusercontent.com/91752852/142558270-5845f9cf-c90b-4edf-8700-bad3522307f6.png)
+
+Fig Structure of a Decision Tree(Source:[laptrinhx.com](https://laptrinhx.com/detailed-explanation-and-math-behind-the-building-of-decision-trees-learners-at-medium-level-2133379269/))
+
+## Decision Tree Terminology
+
+* Root node: Represents entire population
+* Splitting: Process of dividing sample
+* Decision Node: Node splits into further sub nodes
+* Leaf / Terminal Node: Last stage of node (output label)
+* Pruning: Opposite to splitting (to reduce size of tree)
+*  Parent and Child Node: A node, which is divided into sub-nodes is called parent node of sub-nodes where as sub-nodes are the child of parent node.
+* Branch / Sub-Tree: A sub section of entire tree is called branch or sub-tree.
+
+## Types of Decision Tree
+There are two type of Decision trees : Classification tree and decisiob trees
+
+* Classification trees helps you classify categorical data for example loan status (approved/not approved),spam/not spam etc.
+* Regression trees helps you predict outcome which can be a real number for example income of a person, sale price of a house etc.
+
+![github gf](https://user-images.githubusercontent.com/91752852/142559840-8c0db4fe-b5c9-4599-a865-332c5d761480.gif)
+ 
+ Fig: Classfication and Regression Example
+
+There are couple of algorithms there to build a decision tree.Some of them are as follows
+
+* CART (Classification and Regression Trees) → uses Gini Index(Classification) as metric.
+* ID3 (Iterative Dichotomiser 3) → uses Entropy function and Information gain as metrics.
 
 
 
