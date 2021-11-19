@@ -75,6 +75,8 @@ where P is proportion of positive samples in that node. Gini Index of ‘0’ in
 
 ### Entropy
 * It is defined as a measure of impurity present in the data.
+* Entropy tends to be maximum in the middle with value up to 1 and minimum at the ends with value up to 0.
+* Entropy with the lowest value makes a model better in terms of prediction as it separates the classes better. 
 * Mathematically,
      Entropy = -p*log(p) - q*log(q)
 
