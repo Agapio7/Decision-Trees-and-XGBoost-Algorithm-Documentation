@@ -94,7 +94,11 @@ All the methods mentioned above are applied for to classification decision trees
  
  ## How to solve Overfitting in Decision Tree?
  
- There are mainly 2 ways for pruning:
+ ### Pruning 
+ 
+*  Pruning is a technique in machine learning that reduces the size of decision tree by removing branches of the tree that are less important to classify instances. 
+*  Pruning reduces the complexity of the final classifier and hence improves predictive accuracy by the reduction of over-fitting.
+ There are mainly two methods of pruning
 
 (i) Pre-pruning – we can stop growing the tree earlier, which means we can prune/remove/cut a node if it has low importance while growing the tree.
 
