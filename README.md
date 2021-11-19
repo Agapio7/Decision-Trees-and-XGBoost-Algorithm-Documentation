@@ -124,9 +124,17 @@ All the methods mentioned above are applied for to classification decision trees
    
 ### Ensemble method or bagging and boosting
 * Ensemble learning is a general meta approach to machine learning that search for  better predictive performance by combining the predictions from multiple models.There are main classes of ensemble learning methods are bagging, stacking, and boosting.Among them Boosting is a seet of algorithms that focues on converting weak learners to strong learners. 
+![image](https://user-images.githubusercontent.com/91752852/142583791-8bf00ac5-eb6f-4f1a-9178-72d2db0f17b7.png)
+Fig : Single Model Prediction vs Ensemble Learner(Source:[dzone.com](https://dzone.com/articles/xgboost-a-deep-dive-into-boosting))
+
 
 ## BOOSTING
+![image](https://user-images.githubusercontent.com/91752852/142584618-1b6850ce-db95-4ef8-a6f5-d178bb32a324.png)
+Fig: Internal working of boosting algorithm (Source:[dzone.com](https://dzone.com/articles/xgboost-a-deep-dive-into-boosting))
 *  Boosting was first introduced by Freund and Schapire in the year 1997 with their AdaBoost algorithm.
+ 
+ " Boosting refers to a general and provably effective method of producing a very accurate prediction rule by
+combining rough and moderately inaccurate rules of thumb." ” (Schapire and Freund [2012])
 
 
 ###  Types of Boosting
@@ -179,8 +187,6 @@ All the methods mentioned above are applied for to classification decision trees
 Fig  Features in XGBoost for optimization (Source: [Comparative Analysis of Artificial Neural
 Network and XGBoost Algorithm for
 PolSAR Image Classification](https://www.researchgate.net/profile/Dhruvesh-Patel-3/publication/337487611_Comparative_Analysis_of_Artificial_Neural_Network_and_XGBoost_Algorithm_for_PolSAR_Image_Classification/links/5dedd44492851c83646e1141/Comparative-Analysis-of-Artificial-Neural-Network-and-XGBoost-Algorithm-for-PolSAR-Image-Classification.pdf))
-
-
 
 
 
