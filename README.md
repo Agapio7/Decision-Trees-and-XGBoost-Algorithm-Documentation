@@ -287,6 +287,7 @@ The library provides a system for use in a range of computing environments.
 **Distributed Computing** for training very large models using a cluster of machines. XGBoost is able to handle the entire
 1.7 billion data with only four machines. This shows the
 system’s potential to handle even larger data.
+
 ![Comparison of different distributed systems ](https://user-images.githubusercontent.com/91752852/142390557-c38d7d01-61ab-4fef-98e7-40d494b9df82.png)
  
 Fig 3: Comparison of different distributed systems on 32 EC2 nodes for 10 iterations on different subset of criteo data (Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
