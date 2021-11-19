@@ -1,4 +1,4 @@
-# Decision Trees
+# Decision Trees and XGBOOST algorithms
 
 ![arb gf](https://user-images.githubusercontent.com/91752852/142595844-c2ace164-3571-431d-8e5c-e230eac7c1ca.gif)
 
