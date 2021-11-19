@@ -903,3 +903,4 @@ vide a signifcant boost in increasing the gold price forecasting performance.
 * [Detection of Parkinson’s Disease by Employing
 Boosting Algorithms(2021) ](https://www.researchgate.net/profile/Mirza-Nishat/publication/355393889_Detection_of_Parkinson's_Disease_by_Employing_Boosting_Algorithms/links/617439ad3c987366c3d4bd89/Detection-of-Parkinsons-Disease-by-Employing-Boosting-Algorithms.pdf) :  XGBoost and Gradient Boosting algorithm gave accuracies more
 than 90% in Parkinson’s Disease detection
+* [Application of XGBoost Algorithm in The Detection of SARS-CoV-2 Using Raman Spectroscopy](https://iopscience.iop.org/article/10.1088/1742-6596/1775/1/012007/meta) : XGBOOST detected a novel coronavirus with an accuracy of 93.548%.
