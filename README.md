@@ -291,8 +291,7 @@ Fig 3: Comparison of different distributed systems on 32 EC2 nodes for 10 iterat
 
 ![Scaling of XGBoost with different number of machines on criteo full 1 7 billion dataset](https://user-images.githubusercontent.com/91752852/142392340-3e45d2a2-9288-4fb1-8c44-ffd4cf4d6d59.png)
 
-Fig 4 :Scaling of XGBoost with different number of machines on criteo full 1.7 billion dataset(Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
-))
+Fig 4 :Scaling of XGBoost with different number of machines on criteo full 1.7 billion dataset(Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785))
 
 **Out-of-Core Computing** 
 * It optimizes available disk space while handling big data-frames that do not fit into memory.
