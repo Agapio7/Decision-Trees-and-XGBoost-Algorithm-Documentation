@@ -123,9 +123,27 @@ All the methods mentioned above are applied for to classification decision trees
    * Post-pruning – In post pruning, once our tree is built to its depth, we can start pruning the nodes based on their significance.
    
 ### Ensemble method or bagging and boosting
+* Ensemble learning is a general meta approach to machine learning that search for  better predictive performance by combining the predictions from multiple models.There are main classes of ensemble learning methods are bagging, stacking, and boosting.Among them Boosting is a seet of algorithms that focues on converting weak learners to strong learners. 
+
+## BOOSTING
+*  Boosting was first introduced by Freund and Schapire in the year 1997 with their AdaBoost algorithm.
+
+
+###  Types of Boosting
+#### Adaboost: 
+* Adaboost combines multiple weak learners into a single strong learner. 
+* It was purposed by Yoav Freund and Robert Schapire.
+* It operates iteratively, identifying misclassified data points and adjusting their weights to minimize the training error. 
+* The model continues optimize in a sequential fashion until it yields the strongest predictor.
+
+#### Gradient Boosting (GBM): 
+* It was develped by Leo Breiman and Jerome H. Friedman.
+* It works by sequentially adding predictors to an ensemble with each one correcting for the errors of its predecessor. 
+* However, instead of changing weights of data points like AdaBoost, the gradient boosting trains on the residual errors of the previous predictor.
+*  The name gradient boosting is derived from the  combination the gradient descent algorithm and boosting method. 
 
 # XGBOOST
-## Overview
+
 
 *  The extended form of XGBoost is Extreme Gradient Boosting.
 * XGBoost uses supervised learning algorithm  to accurately predict a target variable by combining an ensemble of estimates from a set of simpler and weaker models.
