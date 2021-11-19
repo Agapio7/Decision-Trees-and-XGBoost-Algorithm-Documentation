@@ -13,11 +13,9 @@ Some advantages of decision trees are:
 
 * The cost of using the tree (i.e., predicting data) is logarithmic in the number of data points used to train the tree.
 
-* They can handle both numerical and categorical data. However ,scikit-learn implementation does not support categorical variables for now. Other techniques are usually specialised in analysing datasets that have only one type of variable.
+* They can handle both numerical and categorical data.They can also handle multi-output problems.
 
- * They can handle multi-output problems.
-
-* they Use a white box model. If a given situation is observable in a model, the explanation for the condition is easily explained by boolean logic. By contrast, in a black box model (e.g., in an artificial neural network), results may be more difficult to interpret.
+* they use a white box model. If a given situation is observable in a model, the explanation for the condition is easily explained by boolean logic. By contrast, in a black box model (e.g., in an artificial neural network), results may be more difficult to interpret.
 
 * Possible to validate a model using statistical tests. That makes it possible to account for the reliability of the model.
 
@@ -25,17 +23,17 @@ Some advantages of decision trees are:
 
 Disadvantages of Decison tree
 
-Decision-tree learners can create over-complex trees that do not generalise the data well. This is called overfitting. Mechanisms such as pruning, setting the minimum number of samples required at a leaf node or setting the maximum depth of the tree are necessary to avoid this problem.
+* Decision-tree learners can create over-complex trees that do not generalise the data well which  is called overfitting.
 
-Decision trees can be unstable because small variations in the data might result in a completely different tree being generated. This problem is mitigated by using decision trees within an ensemble.
+* Decision trees can be unstable because small variations in the data might result in a completely different tree being generated. 
 
-Predictions of decision trees are neither smooth nor continuous, but piecewise constant approximations as seen in the above figure. Therefore, they are not good at extrapolation.
+* Predictions of decision trees are neither smooth nor continuous, but piecewise constant approximations. Therefore, they are not good at extrapolation.
 
-The problem of learning an optimal decision tree is known to be NP-complete under several aspects of optimality and even for simple concepts. Consequently, practical decision-tree learning algorithms are based on heuristic algorithms such as the greedy algorithm where locally optimal decisions are made at each node. Such algorithms cannot guarantee to return the globally optimal decision tree. This can be mitigated by training multiple trees in an ensemble learner, where the features and samples are randomly sampled with replacement.
+* Greedy algorithms cannot guarantee to return the globally optimal decision tree. This can be mitigated by training multiple trees, where the features and samples are randomly sampled with replacement.
 
-There are concepts that are hard to learn because decision trees do not express them easily, such as XOR, parity or multiplexer problems.
+* There are concepts that are hard to learn because decision trees do not express them easily, such as XOR, parity or multiplexer problems.
 
-Decision tree learners create biased trees if some classes dominate. It is therefore recommended to balance the dataset prior to fitting with the decision tree.
+* Decision tree learners create biased trees if some classes dominate. It is therefore recommended to balance the dataset prior to fitting with the decision tree.
 
 
 
