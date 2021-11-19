@@ -72,7 +72,15 @@ There are couple of algorithms there to build a decision tree.Some of them are a
 where P is proportion of positive samples in that node. Gini Index of ‘0’ indicates that node is pure.Thus it indicates no further splitting is needed.
 
 ### Entropy
-* Entropy = -p*log(p) - q*log(q)
+* It is defined as a measure of impurity present in the data.
+* Mathematically,
+     Entropy = -p*log(p) - q*log(q)
+
+### Information Gain
+* It is a measure used to generalize the impurity which is entropy in a dataset. 
+* Higher the information gain, lower is the entropy.
+* Mathematically,
+     Information Gain = Entropy of Parent – sum (weighted % * Entropy of Child),Weighted % = Number of observations in particular child/sum (observations in all child nodes)
 
 ### Reduction in Variance
 All the methods mentioned above are applied for to classification decision trees. 
@@ -83,6 +91,14 @@ All the methods mentioned above are applied for to classification decision trees
 
 ![image](https://user-images.githubusercontent.com/91752852/142570364-376bac58-ba7b-4725-bd85-c015479f04dd.png)
  Where X bar is the mean of values, X is the actual mean and n is the number of values.
+ 
+ ## How to solve Overfitting in Decision Tree?
+ 
+ There are mainly 2 ways for pruning:
+
+(i) Pre-pruning – we can stop growing the tree earlier, which means we can prune/remove/cut a node if it has low importance while growing the tree.
+
+(ii) Post-pruning – once our tree is built to its depth, we can start pruning the nodes based on their significance.
 
 # XGBOOST
 ## Overview
