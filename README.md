@@ -67,8 +67,22 @@ There are couple of algorithms there to build a decision tree.Some of them are a
 * CART (Classification and Regression Trees) → uses Gini Index(Classification) as metric.
 * ID3 (Iterative Dichotomiser 3) → uses Entropy function and Information gain as metrics.
 
+### Gini Index
+* Mathematically: Gini Index = 1-[(P)²+(1-P)²]
+where P is proportion of positive samples in that node. Gini Index of ‘0’ indicates that node is pure.Thus it indicates no further splitting is needed.
 
+### Entropy
+* Entropy = -p*log(p) - q*log(q)
 
+### Reduction in Variance
+All the methods mentioned above are applied for to classification decision trees. 
+* In case of regression decision tree where target variable is continuous, reduction in variance method is followed.
+* It uses the standard formula of variance to choose the best split. 
+* The split with lower variance is selected as the criteria to split the population.
+* Mathematically represented as
+
+![image](https://user-images.githubusercontent.com/91752852/142570364-376bac58-ba7b-4725-bd85-c015479f04dd.png)
+ Where X bar is the mean of values, X is the actual mean and n is the number of values.
 
 # XGBOOST
 ## Overview
