@@ -7,7 +7,7 @@ Fig 1: Decision Trees(Source:https://user-images.githubusercontent.com/91752852/
 * Decision Trees (DTs) are a non-parametric supervised learning method used for classification and regression. 
 * The goal is to create a model that predicts the value of a target variable by learning simple decision rules inferred from the data features. 
 
-##  Advantages of Decision Trees
+##  Advantages and Disadvantages of Decision Trees
 
 Some advantages of decision trees are:
 
