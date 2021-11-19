@@ -86,6 +86,14 @@ where P is proportion of positive samples in that node. Gini Index of ‘0’ in
 * Higher the information gain, lower is the entropy.
 * Mathematically,
      Information Gain = Entropy of Parent – sum (weighted % * Entropy of Child),Weighted % = Number of observations in particular child/sum (observations in all child nodes)
+     
+     
+### Chi Square
+* Helps to find out the statistical significance between the differences among sub-nodes and parent node.
+* we measure it by sum of squares of standardized differences between observed and expected frequencies of target variable.
+* Mathematically represented as
+    Chi-square = ((Actual — Expected)² / Expected)¹/2
+* It is a measure of purity. higher the value of Chi-square wil be the higher in  statistical significance of differences between sub-node and Parent node.
 
 ### Reduction in Variance
 All the methods mentioned above are applied for to classification decision trees. 
