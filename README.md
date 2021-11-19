@@ -135,6 +135,10 @@ All the methods mentioned above are applied for to classification decision trees
 * It was purposed by Yoav Freund and Robert Schapire.
 * It operates iteratively, identifying misclassified data points and adjusting their weights to minimize the training error. 
 * The model continues optimize in a sequential fashion until it yields the strongest predictor.
+![image](https://user-images.githubusercontent.com/91752852/142587339-840dfa21-efc3-46a6-bd1a-8bef65fe7c47.png)
+
+Fig : Adaboost updates weights of the observations at each iteration. Weights of well classified observations decrease relatively to weights of misclassified observations. Models that perform better have higher weights in the final ensemble model(Source:[Ensemble methods: bagging, boosting and stacking](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205))
+
 
 #### Gradient Boosting (GBM): 
 *  The name gradient boosting is derived from the  combination the gradient descent algorithm and boosting method.
@@ -146,6 +150,9 @@ All the methods mentioned above are applied for to classification decision trees
    * Loss function that needs to be ameliorated.
    * Weak learner for computing predictions and forming strong learners.
    * An Additive Model that will regularize the loss function.
+
+![image](https://user-images.githubusercontent.com/91752852/142588079-b80406de-332f-4ae5-bab1-d1ebc42811e1.png)
+Fig :Gradient boosting updates values of the observations at each iteration. Weak learners are trained to fit the pseudo-residuals that indicate in which direction to correct the current ensemble model predictions to lower the error(Source:[Ensemble methods: bagging, boosting and stacking](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205))
 
 #### Extreme gradient boosting or XGBoost: 
 * XGBoost is an implementation of gradient boosting that’s designed for computational speed and scale. 
