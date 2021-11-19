@@ -121,6 +121,10 @@ All the methods mentioned above are applied for to classification decision trees
 * There are mainly two methods of pruning
    * Pre-pruning –  Growing tree is stopped earlier.It means  we can prune/remove/cut a node if it has low importance while growing the tree.
    * Post-pruning – In post pruning, once our tree is built to its depth, we can start pruning the nodes based on their significance.
+
+![image](https://user-images.githubusercontent.com/91752852/142585662-f2c7f16f-738a-4de0-9ee1-17b111e1c6e1.png)
+
+Fig : Pruning a neural network(Source:[ Deep Learning With EdgeComputing: A Review(https://www.researchgate.net/publication/334489669_Deep_Learning_With_Edge_Computing_A_Review))
    
 ### Ensemble method or bagging and boosting
 * Ensemble learning is a general meta approach to machine learning that search for  better predictive performance by combining the predictions from multiple models.There are main classes of ensemble learning methods are bagging, stacking, and boosting.Among them Boosting is a seet of algorithms that focues on converting weak learners to strong learners. 
