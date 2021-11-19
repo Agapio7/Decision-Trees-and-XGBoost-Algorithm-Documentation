@@ -70,7 +70,11 @@ There are couple of algorithms there to build a decision tree.Some of them are a
 ### Gini Index
 * Gini Index is a metric to measure how often a randomly chosen element would be incorrectly identified. 
 * An attribute with lower Gini Index should be preferred.
-* Mathematically: Gini Index = 1-[(P)²+(1-P)²]
+* Mathematically: 
+
+  ![image](https://user-images.githubusercontent.com/91752852/142573295-5b6ec7ce-e218-47b9-b98d-58350a44b3c2.png)
+
+
 where P is proportion of positive samples in that node. Gini Index of ‘0’ indicates that node is pure.Thus it indicates no further splitting is needed.
 
 ### Entropy
@@ -92,7 +96,9 @@ where P is proportion of positive samples in that node. Gini Index of ‘0’ in
 * Helps to find out the statistical significance between the differences among sub-nodes and parent node.
 * we measure it by sum of squares of standardized differences between observed and expected frequencies of target variable.
 * Mathematically represented as
-    Chi-square = ((Actual — Expected)² / Expected)¹/2
+    
+    ![image](https://user-images.githubusercontent.com/91752852/142573373-d2e39a66-8441-42b3-a8a5-9962705437bc.png)
+
 * It is a measure of purity. higher the value of Chi-square wil be the higher in  statistical significance of differences between sub-node and Parent node.
 
 ### Reduction in Variance
@@ -115,6 +121,8 @@ All the methods mentioned above are applied for to classification decision trees
 * There are mainly two methods of pruning
    * Pre-pruning –  Growing tree is stopped earlier.It means  we can prune/remove/cut a node if it has low importance while growing the tree.
    * Post-pruning – In post pruning, once our tree is built to its depth, we can start pruning the nodes based on their significance.
+   
+### Ensemble method or bagging and boosting
 
 # XGBOOST
 ## Overview
