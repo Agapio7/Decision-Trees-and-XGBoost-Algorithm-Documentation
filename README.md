@@ -96,16 +96,15 @@ All the methods mentioned above are applied for to classification decision trees
  Where X bar is the mean of values, X is the actual mean and n is the number of values.
  
  ## How to solve Overfitting in Decision Tree?
+ Overfitting is the  main challenge in decision tree.Overfitting can be avoided by two methods.
  
  ### Pruning 
  
 *  Pruning is a technique in machine learning that reduces the size of decision tree by removing branches of the tree that are less important to classify instances. 
 *  Pruning reduces the complexity of the final classifier and hence improves predictive accuracy by the reduction of over-fitting.
- There are mainly two methods of pruning
-
-(i) Pre-pruning – we can stop growing the tree earlier, which means we can prune/remove/cut a node if it has low importance while growing the tree.
-
-(ii) Post-pruning – once our tree is built to its depth, we can start pruning the nodes based on their significance.
+* There are mainly two methods of pruning
+   * Pre-pruning –  Growing tree is stopped earlier.It means  we can prune/remove/cut a node if it has low importance while growing the tree.
+   * Post-pruning – In post pruning, once our tree is built to its depth, we can start pruning the nodes based on their significance.
 
 # XGBOOST
 ## Overview
