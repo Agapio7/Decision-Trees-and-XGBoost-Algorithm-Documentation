@@ -68,6 +68,8 @@ There are couple of algorithms there to build a decision tree.Some of them are a
 * ID3 (Iterative Dichotomiser 3) → uses Entropy function and Information gain as metrics.
 
 ### Gini Index
+* Gini Index is a metric to measure how often a randomly chosen element would be incorrectly identified. 
+* An attribute with lower Gini Index should be preferred.
 * Mathematically: Gini Index = 1-[(P)²+(1-P)²]
 where P is proportion of positive samples in that node. Gini Index of ‘0’ indicates that node is pure.Thus it indicates no further splitting is needed.
 
@@ -77,7 +79,8 @@ where P is proportion of positive samples in that node. Gini Index of ‘0’ in
      Entropy = -p*log(p) - q*log(q)
 
 ### Information Gain
-* It is a measure used to generalize the impurity which is entropy in a dataset. 
+* It is a measure used to generalize the impurity which is entropy in a dataset.
+* In a decision tree building process, two important decisions are to be made  what is the best split(s) and which is the best variable to split a node. 
 * Higher the information gain, lower is the entropy.
 * Mathematically,
      Information Gain = Entropy of Parent – sum (weighted % * Entropy of Child),Weighted % = Number of observations in particular child/sum (observations in all child nodes)
