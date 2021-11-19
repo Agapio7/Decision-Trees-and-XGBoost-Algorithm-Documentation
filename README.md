@@ -1,7 +1,7 @@
 # Decision Trees and XGBOOST algorithms
 
-![arb gf](https://user-images.githubusercontent.com/91752852/142595844-c2ace164-3571-431d-8e5c-e230eac7c1ca.gif)
-
+  ![arb gf](https://user-images.githubusercontent.com/91752852/142595844-c2ace164-3571-431d-8e5c-e230eac7c1ca.gif)
+Fig 1: Decision Trees(Source:https://user-images.githubusercontent.com/91752852/142595844-c2ace164-3571-431d-8e5c-e230eac7c1ca.gif)
 
 * Decision Trees (DTs) are a non-parametric supervised learning method used for classification and regression. 
 * The goal is to create a model that predicts the value of a target variable by learning simple decision rules inferred from the data features. 
@@ -43,7 +43,7 @@ Disadvantages of Decison tree
 
 ![image](https://user-images.githubusercontent.com/91752852/142558270-5845f9cf-c90b-4edf-8700-bad3522307f6.png)
 
-Fig Structure of a Decision Tree(Source:[laptrinhx.com](https://laptrinhx.com/detailed-explanation-and-math-behind-the-building-of-decision-trees-learners-at-medium-level-2133379269/))
+Fig 2: Structure of a Decision Tree(Source:[laptrinhx.com](https://laptrinhx.com/detailed-explanation-and-math-behind-the-building-of-decision-trees-learners-at-medium-level-2133379269/))
 
 ## Decision Tree Terminology
 
@@ -63,7 +63,7 @@ There are two type of Decision trees : Classification tree and decisiob trees
 
 ![github gf](https://user-images.githubusercontent.com/91752852/142559840-8c0db4fe-b5c9-4599-a865-332c5d761480.gif)
  
- Fig: Classfication and Regression Example
+ Fig 3: Classfication and Regression Example
 
 There are couple of algorithms there to build a decision tree.Some of them are as follows
 
@@ -127,17 +127,17 @@ All the methods mentioned above are applied for to classification decision trees
 
 ![image](https://user-images.githubusercontent.com/91752852/142585662-f2c7f16f-738a-4de0-9ee1-17b111e1c6e1.png)
 
-Fig : Pruning a neural network(Source:[ Deep Learning With EdgeComputing: A Review(https://www.researchgate.net/publication/334489669_Deep_Learning_With_Edge_Computing_A_Review))
+Fig 4 : Pruning a neural network(Source:[ Deep Learning With EdgeComputing: A Review(https://www.researchgate.net/publication/334489669_Deep_Learning_With_Edge_Computing_A_Review))
    
 ### Ensemble method or bagging and boosting
 * Ensemble learning is a general meta approach to machine learning that search for  better predictive performance by combining the predictions from multiple models.There are main classes of ensemble learning methods are bagging, stacking, and boosting.Among them Boosting is a seet of algorithms that focues on converting weak learners to strong learners. 
 ![image](https://user-images.githubusercontent.com/91752852/142583791-8bf00ac5-eb6f-4f1a-9178-72d2db0f17b7.png)
-Fig : Single Model Prediction vs Ensemble Learner(Source:[dzone.com](https://dzone.com/articles/xgboost-a-deep-dive-into-boosting))
+Fig 5 : Single Model Prediction vs Ensemble Learner(Source:[dzone.com](https://dzone.com/articles/xgboost-a-deep-dive-into-boosting))
 
 
 ## BOOSTING
 ![image](https://user-images.githubusercontent.com/91752852/142584618-1b6850ce-db95-4ef8-a6f5-d178bb32a324.png)
-Fig: Internal working of boosting algorithm (Source:[dzone.com](https://dzone.com/articles/xgboost-a-deep-dive-into-boosting))
+Fig 6: Internal working of boosting algorithm (Source:[dzone.com](https://dzone.com/articles/xgboost-a-deep-dive-into-boosting))
 *  Boosting was first introduced by Freund and Schapire in the year 1997 with their AdaBoost algorithm.
  
  " Boosting refers to a general and provably effective method of producing a very accurate prediction rule by
@@ -152,7 +152,7 @@ combining rough and moderately inaccurate rules of thumb." ” (Schapire and Fre
 * The model continues optimize in a sequential fashion until it yields the strongest predictor.
 ![image](https://user-images.githubusercontent.com/91752852/142587339-840dfa21-efc3-46a6-bd1a-8bef65fe7c47.png)
 
-Fig : Adaboost updates weights of the observations at each iteration. Weights of well classified observations decrease relatively to weights of misclassified observations. Models that perform better have higher weights in the final ensemble model(Source:[Ensemble methods: bagging, boosting and stacking](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205))
+Fig 7: Adaboost updates weights of the observations at each iteration. Weights of well classified observations decrease relatively to weights of misclassified observations. Models that perform better have higher weights in the final ensemble model(Source:[Ensemble methods: bagging, boosting and stacking](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205))
 
 
 #### Gradient Boosting (GBM): 
@@ -167,7 +167,7 @@ Fig : Adaboost updates weights of the observations at each iteration. Weights of
    * An Additive Model that will regularize the loss function.
 
 ![image](https://user-images.githubusercontent.com/91752852/142588079-b80406de-332f-4ae5-bab1-d1ebc42811e1.png)
-Fig :Gradient boosting updates values of the observations at each iteration. Weak learners are trained to fit the pseudo-residuals that indicate in which direction to correct the current ensemble model predictions to lower the error(Source:[Ensemble methods: bagging, boosting and stacking](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205))
+Fig 8:Gradient boosting updates values of the observations at each iteration. Weak learners are trained to fit the pseudo-residuals that indicate in which direction to correct the current ensemble model predictions to lower the error(Source:[Ensemble methods: bagging, boosting and stacking](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205))
 
 #### Extreme gradient boosting or XGBoost: 
 * XGBoost is an implementation of gradient boosting that’s designed for computational speed and scale. 
@@ -192,13 +192,13 @@ Fig :Gradient boosting updates values of the observations at each iteration. Wea
 
 ![image](https://user-images.githubusercontent.com/91752852/142379264-f5141ccb-0eb3-42e8-aae3-822c811e856d.png)
  
- Fig 1: Brief illustration on how gradient tree boosting works Source:[Amazon SageMaker Developer Guide](https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-HowItWorks.html)
+ Fig 9: Brief illustration on how gradient tree boosting works Source:[Amazon SageMaker Developer Guide](https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-HowItWorks.html)
 
 ## XGBoost Features
 
 ![Features in XGBoost for optimization](https://user-images.githubusercontent.com/91752852/142411564-45e61816-2d39-4bc8-bf9c-45f3f09f89de.png)
 
-Fig  Features in XGBoost for optimization (Source: [Comparative Analysis of Artificial Neural
+Fig 10: Features in XGBoost for optimization (Source: [Comparative Analysis of Artificial Neural
 Network and XGBoost Algorithm for
 PolSAR Image Classification](https://www.researchgate.net/profile/Dhruvesh-Patel-3/publication/337487611_Comparative_Analysis_of_Artificial_Neural_Network_and_XGBoost_Algorithm_for_PolSAR_Image_Classification/links/5dedd44492851c83646e1141/Comparative-Analysis-of-Artificial-Neural-Network-and-XGBoost-Algorithm-for-PolSAR-Image-Classification.pdf))
 
@@ -277,7 +277,7 @@ entries.
 
 ![Impact of the sparsity aware algorithm](https://user-images.githubusercontent.com/91752852/142404069-bb324d17-a897-4144-8b1f-9ef1acce27f3.png)
 
-Fig 2: Impact of the sparsity aware algorithm on Allstate-10K.(Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
+Fig 11: Impact of the sparsity aware algorithm on Allstate-10K.(Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
 ))
 
 
@@ -297,12 +297,12 @@ system’s potential to handle even larger data.
 
 ![Comparison of different distributed systems ](https://user-images.githubusercontent.com/91752852/142390557-c38d7d01-61ab-4fef-98e7-40d494b9df82.png)
  
-Fig 3: Comparison of different distributed systems on 32 EC2 nodes for 10 iterations on different subset of criteo data (Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
+Fig 12: Comparison of different distributed systems on 32 EC2 nodes for 10 iterations on different subset of criteo data (Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
 ))
 
 ![Scaling of XGBoost with different number of machines on criteo full 1 7 billion dataset](https://user-images.githubusercontent.com/91752852/142392340-3e45d2a2-9288-4fb1-8c44-ffd4cf4d6d59.png)
 
-Fig 4 :Scaling of XGBoost with different number of machines on criteo full 1.7 billion dataset(Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785))
+Fig 13 :Scaling of XGBoost with different number of machines on criteo full 1.7 billion dataset(Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785))
 
 **Out-of-Core Computing** 
 * It optimizes available disk space while handling big data-frames that do not fit into memory.
@@ -338,7 +338,7 @@ reflects the cache storage cost of gradient statistics.
 
 ![Impact of cache-aware prefetching in exact greedy algorithm](https://user-images.githubusercontent.com/91752852/142407659-5dd0cbe6-dd0b-4c2d-95e4-cc28ca04f35b.png)
  
-Fig 5:  Impact of cache-aware prefetching in exact greedy algorithm (Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
+Fig 14:  Impact of cache-aware prefetching in exact greedy algorithm (Source: [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785
 )
 **Block structure for Parallel Learning**: 
 * XGBoost can make use of multiple cores on the CPU for faster computing. 
@@ -351,7 +351,7 @@ Fig 5:  Impact of cache-aware prefetching in exact greedy algorithm (Source: [XG
 
 ![Block Structure](https://user-images.githubusercontent.com/91752852/142387504-179600fc-ad34-4dba-a261-a32ea53a61cb.png)
 
-Fig 6:Block structure for parallel learning(Source:[XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785))
+Fig 15:Block structure for parallel learning(Source:[XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/pdf/10.1145/2939672.2939785))
 
 ## Goal of XGBOOST
 
@@ -361,7 +361,7 @@ Fig 6:Block structure for parallel learning(Source:[XGBoost: A Scalable Tree Boo
 
 ![image](https://user-images.githubusercontent.com/91752852/142382371-a4397021-2f36-4e18-9ae9-68df1c2e3bb9.png)
 
-Fig 7: Benchmark Performance of XGBoost Source: [Benchmarking Random Forest Implementations.](http://datascience.la/benchmarking-random-forest-implementations/) 
+Fig 16: Benchmark Performance of XGBoost Source: [Benchmarking Random Forest Implementations.](http://datascience.la/benchmarking-random-forest-implementations/) 
 
 ### High Model Performance: 
 * XGBoost dominates structured or tabular datasets on classification and regression predictive modelling problems.
