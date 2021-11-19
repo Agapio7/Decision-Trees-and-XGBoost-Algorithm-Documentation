@@ -131,16 +131,25 @@ All the methods mentioned above are applied for to classification decision trees
 
 ###  Types of Boosting
 #### Adaboost: 
-* Adaboost combines multiple weak learners into a single strong learner. 
+* AdaBoost is implemented by combining several weak learners into a single strong learner.
 * It was purposed by Yoav Freund and Robert Schapire.
 * It operates iteratively, identifying misclassified data points and adjusting their weights to minimize the training error. 
 * The model continues optimize in a sequential fashion until it yields the strongest predictor.
 
 #### Gradient Boosting (GBM): 
+*  The name gradient boosting is derived from the  combination the gradient descent algorithm and boosting method.
 * It was develped by Leo Breiman and Jerome H. Friedman.
 * It works by sequentially adding predictors to an ensemble with each one correcting for the errors of its predecessor. 
 * However, instead of changing weights of data points like AdaBoost, the gradient boosting trains on the residual errors of the previous predictor.
-*  The name gradient boosting is derived from the  combination the gradient descent algorithm and boosting method. 
+ 
+*  The main objective is to overcome the errors in the previous learner’s predictions. This type of boosting has three main parts:
+   * Loss function that needs to be ameliorated.
+   * Weak learner for computing predictions and forming strong learners.
+   * An Additive Model that will regularize the loss function.
+
+#### Extreme gradient boosting or XGBoost: 
+* XGBoost is an implementation of gradient boosting that’s designed for computational speed and scale. 
+* XGBoost leverages multiple cores on the CPU, allowing for learning to occur in parallel during training.  
 
 # XGBOOST
 
