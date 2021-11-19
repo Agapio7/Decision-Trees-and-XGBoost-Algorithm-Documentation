@@ -905,3 +905,33 @@ Boosting Algorithms(2021) ](https://www.researchgate.net/profile/Mirza-Nishat/pu
 than 90% in Parkinson’s Disease detection
 * [Application of XGBoost Algorithm in The Detection of SARS-CoV-2 Using Raman Spectroscopy](https://iopscience.iop.org/article/10.1088/1742-6596/1775/1/012007/meta) : XGBOOST detected a novel coronavirus with an accuracy of 93.548%.
 * [Streamflow forecasting using extreme gradient boosting model coupled with Gaussian mixture model](https://www.sciencedirect.com/science/article/abs/pii/S0022169420303619):XGBoost is applicable for streamflow forecasting and performs better than SVM.
+
+
+## Reference
+* Alon, Noga, Alon Gonen, Elad Hazan, and Shay Moran. “Boosting Simple Learners.” ArXiv:2001.11704 [Cs, Stat], April 8, 2021. http://arxiv.org/abs/2001.11704.
+* Aws/Sagemaker-Containers. Python. 2018. Reprint, Amazon Web Services, 2021. https://github.com/aws/sagemaker-containers.
+* Analytics Vidhya. “Best Boosting Algorithm In Machine Learning In 2021,” April 27, 2021. https://www.analyticsvidhya.com/blog/2021/04/best-boosting-algorithm-in-machine-learning-in-2021/.
+* Bühlmann, Peter, and Torsten Hothorn. “Boosting Algorithms: Regularization, Prediction and Model Fitting.” Statistical Science 22, no. 4 (November 1, 2007). https://doi.org/10.1214/07-STS242.
+* Chen, Tianqi, and Carlos Guestrin. “XGBoost: A Scalable Tree Boosting System.” Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, August 13, 2016, 785–94. https://doi.org/10.1145/2939672.2939785.
+* “Docker Registry Paths and Example Code - Amazon SageMaker.” Accessed November 18, 2021. https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html.
+* EXtreme Gradient Boosting. C++. 2014. Reprint, Distributed (Deep) Machine Learning Community, 2021. https://github.com/dmlc/xgboost.
+* Intergovernmental Panel on Climate Change, ed. “Summary for Policymakers.” In Climate Change 2013 – The Physical Science Basis: Working Group I Contribution to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change, 1–30. Cambridge: Cambridge University Press, 2014. https://doi.org/10.1017/CBO9781107415324.004.
+* Li, Cheng. “A Gentle Introduction to Gradient Boosting,” n.d., 80.
+* “Managed Spot Training for XGBoost — Amazon SageMaker Examples 1.0.0 Documentation.” Accessed November 18, 2021. https://sagemaker-examples.readthedocs.io/en/latest/introduction_to_amazon_algorithms/xgboost_abalone/xgboost_managed_spot_training.html.
+* Mayr, Andreas, Harald Binder, Olaf Gefeller, and Matthias Schmid. “The Evolution of Boosting Algorithms - From Machine Learning to Statistical Modelling.” Methods of Information in Medicine 53, no. 06 (2014): 419–27. https://doi.org/10.3414/ME13-01-0122.
+* Memon, Nimra, Samir Patel, and Dhruvesh Patel. “Comparative Analysis of Artificial Neural Network and XGBoost Algorithm for PolSAR Image Classification,” 452–60, 2019. https://doi.org/10.1007/978-3-030-34869-4_49.
+* Nishat, Mirza, Tasnimul Hasan, Sarker Nasrullah, Fahim Faisal, Md. Asfi Asif, and Md. Ashraful Hoque. Detection of Parkinson’s Disease by Employing Boosting Algorithms, 2021. https://doi.org/10.1109/ICIEVicIVPR52578.2021.9564108.
+* Pafka, Szilard. Szilard/Benchm-Ml. R, 2021. https://github.com/szilard/benchm-ml.
+* “Parallel Gradient Boosting Decision Trees.” Accessed November 18, 2021. http://zhanpengfang.github.io/418home.html.
+* Parikh, Biraj. “Decision Tree Intuition.” GreyAtom (blog), August 9, 2017. https://medium.com/greyatom/decision-tree-intuition-a38669005cb7.
+* “Regression with Amazon SageMaker XGBoost Algorithm — Amazon SageMaker Examples 1.0.0 Documentation.” Accessed November 18, 2021. https://sagemaker-examples.readthedocs.io/en/latest/introduction_to_amazon_algorithms/xgboost_abalone/xgboost_abalone_dist_script_mode.html.
+* Rocca, Joseph. “Ensemble Methods: Bagging, Boosting and Stacking.” Medium, March 21, 2021. https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205.
+* “Story and Lessons Behind the Evolution of XGBoost - Nttrungmt-Wiki.” Accessed November 18, 2021. https://sites.google.com/site/nttrungmtwiki/home/it/data-science---python/xgboost/story-and-lessons-behind-the-evolution-of-xgboost.
+* Team, Great Learning. “Introduction to Decision Tree Algorithm - Explained with Examples.” GreatLearning Blog: Free Resources what Matters to shape your Career!, February 13, 2020. https://www.mygreatlearning.com/blog/decision-tree-algorithm/.
+*  “Understanding XGBoost Algorithm | What Is XGBoost Algorithm?” GreatLearning Blog: Free Resources what Matters to shape your Career!, October 22, 2020. https://www.mygreatlearning.com/blog/xgboost-algorithm/.
+* Analytics Vidhya. “Tree Based Algorithms | Implementation In Python & R,” April 11, 2016. https://www.analyticsvidhya.com/blog/2016/04/tree-based-algorithms-complete-tutorial-scratch-in-python/.
+* “UCI Machine Learning Repository: Abalone Data Set.” Accessed November 18, 2021. https://archive.ics.uci.edu/ml/datasets/abalone.
+* Technovert. “What Is Decision Tree - Technovert Solutions,” April 25, 2019. https://technovert.com/blog/what-is-decision-tree/.
+* dzone.com. “XGBoost: A Deep Dive Into Boosting - DZone AI.” Accessed November 19, 2021. https://dzone.com/articles/xgboost-a-deep-dive-into-boosting.
+* “XGBoost Algorithm - Amazon SageMaker.” Accessed November 18, 2021. https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html.
+* “XGBoost Tutorials — Xgboost 1.6.0-Dev Documentation.” Accessed November 18, 2021. https://xgboost.readthedocs.io/en/latest/tutorials/index.html.
