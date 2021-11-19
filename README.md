@@ -1,5 +1,158 @@
+# Decision Trees
+
+* Decision Trees (DTs) are a non-parametric supervised learning method used for classification and regression. 
+* The goal is to create a model that predicts the value of a target variable by learning simple decision rules inferred from the data features. 
+
+##  Advantages of Decision Trees
+
+Some advantages of decision trees are:
+
+* They are simple to understand,interpret and visualised.
+
+* They requires little data preparation. Any missing value present in the data does not affect a decision tree.So,it is considered a flexible algorithm.
+
+* The cost of using the tree (i.e., predicting data) is logarithmic in the number of data points used to train the tree.
+
+* They can handle both numerical and categorical data.They can also handle multi-output problems.
+
+* they use a white box model. If a given situation is observable in a model, the explanation for the condition is easily explained by boolean logic. By contrast, in a black box model (e.g., in an artificial neural network), results may be more difficult to interpret.
+
+* Possible to validate a model using statistical tests. That makes it possible to account for the reliability of the model.
+
+* They can perform well even if its assumptions are somewhat violated by the true model from which the data were generated.
+
+Disadvantages of Decison tree
+
+* Decision-tree learners can create over-complex trees that do not generalise the data well which  is called overfitting.
+
+* A decision tree is sometimes unstable and cannot be reliable as alteration in data can cause a decision tree go in a bad structure which may affect the accuracy of the model.
+
+* Predictions of decision trees are neither smooth nor continuous, but piecewise constant approximations. Therefore, they are not good at extrapolation.
+
+* Greedy algorithms cannot guarantee to return the globally optimal decision tree. This can be mitigated by training multiple trees, where the features and samples are randomly sampled with replacement.
+
+* There are concepts that are hard to learn because decision trees do not express them easily, such as XOR, parity or multiplexer problems.
+
+* Decision tree learners create biased trees if some classes dominate. It is therefore recommended to balance the dataset prior to fitting with the decision tree.
+
+
+## Decision Tree structure
+
+![image](https://user-images.githubusercontent.com/91752852/142558270-5845f9cf-c90b-4edf-8700-bad3522307f6.png)
+
+Fig Structure of a Decision Tree(Source:[laptrinhx.com](https://laptrinhx.com/detailed-explanation-and-math-behind-the-building-of-decision-trees-learners-at-medium-level-2133379269/))
+
+## Decision Tree Terminology
+
+* Root node: Represents entire population
+* Splitting: Process of dividing sample
+* Decision Node: Node splits into further sub nodes
+* Leaf / Terminal Node: Last stage of node (output label)
+* Pruning: Opposite to splitting (to reduce size of tree)
+*  Parent and Child Node: A node, which is divided into sub-nodes is called parent node of sub-nodes where as sub-nodes are the child of parent node.
+* Branch / Sub-Tree: A sub section of entire tree is called branch or sub-tree.
+
+## Types of Decision Tree
+There are two type of Decision trees : Classification tree and decisiob trees
+
+* Classification trees helps you classify categorical data for example loan status (approved/not approved),spam/not spam etc.
+* Regression trees helps you predict outcome which can be a real number for example income of a person, sale price of a house etc.
+
+![github gf](https://user-images.githubusercontent.com/91752852/142559840-8c0db4fe-b5c9-4599-a865-332c5d761480.gif)
+ 
+ Fig: Classfication and Regression Example
+
+There are couple of algorithms there to build a decision tree.Some of them are as follows
+
+* CART (Classification and Regression Trees) → uses Gini Index(Classification) as metric.
+* ID3 (Iterative Dichotomiser 3) → uses Entropy function and Information gain as metrics.
+
+### Gini Index
+* Gini Index is a metric to measure how often a randomly chosen element would be incorrectly identified. 
+* An attribute with lower Gini Index should be preferred.
+* Mathematically: 
+
+  ![image](https://user-images.githubusercontent.com/91752852/142573295-5b6ec7ce-e218-47b9-b98d-58350a44b3c2.png)
+
+
+where P is proportion of positive samples in that node. Gini Index of ‘0’ indicates that node is pure.Thus it indicates no further splitting is needed.
+
+### Entropy
+* It is defined as a measure of impurity present in the data.
+* Entropy tends to be maximum in the middle with value up to 1 and minimum at the ends with value up to 0.
+* Entropy with the lowest value makes a model better in terms of prediction as it separates the classes better. 
+* Mathematically,
+     Entropy = -p*log(p) - q*log(q)
+
+### Information Gain
+* It is a measure used to generalize the impurity which is entropy in a dataset.
+* In a decision tree building process, two important decisions are to be made  what is the best split(s) and which is the best variable to split a node. 
+* Higher the information gain, lower is the entropy.
+* Mathematically,
+     Information Gain = Entropy of Parent – sum (weighted % * Entropy of Child),Weighted % = Number of observations in particular child/sum (observations in all child nodes)
+     
+     
+### Chi Square
+* Helps to find out the statistical significance between the differences among sub-nodes and parent node.
+* we measure it by sum of squares of standardized differences between observed and expected frequencies of target variable.
+* Mathematically represented as
+    
+    ![image](https://user-images.githubusercontent.com/91752852/142573373-d2e39a66-8441-42b3-a8a5-9962705437bc.png)
+
+* It is a measure of purity. higher the value of Chi-square wil be the higher in  statistical significance of differences between sub-node and Parent node.
+
+### Reduction in Variance
+All the methods mentioned above are applied for to classification decision trees. 
+* In case of regression decision tree where target variable is continuous, reduction in variance method is followed.
+* It uses the standard formula of variance to choose the best split. 
+* The split with lower variance is selected as the criteria to split the population.
+* Mathematically represented as
+
+![image](https://user-images.githubusercontent.com/91752852/142570364-376bac58-ba7b-4725-bd85-c015479f04dd.png)
+ Where X bar is the mean of values, X is the actual mean and n is the number of values.
+ 
+ ## How to solve Overfitting in Decision Tree?
+ Overfitting is the  main challenge in decision tree.Overfitting can be avoided by two methods.
+ 
+ ### Pruning 
+ 
+*  Pruning is a technique in machine learning that reduces the size of decision tree by removing branches of the tree that are less important to classify instances. 
+*  Pruning reduces the complexity of the final classifier and hence improves predictive accuracy by the reduction of over-fitting.
+* There are mainly two methods of pruning
+   * Pre-pruning –  Growing tree is stopped earlier.It means  we can prune/remove/cut a node if it has low importance while growing the tree.
+   * Post-pruning – In post pruning, once our tree is built to its depth, we can start pruning the nodes based on their significance.
+   
+### Ensemble method or bagging and boosting
+* Ensemble learning is a general meta approach to machine learning that search for  better predictive performance by combining the predictions from multiple models.There are main classes of ensemble learning methods are bagging, stacking, and boosting.Among them Boosting is a seet of algorithms that focues on converting weak learners to strong learners. 
+
+## BOOSTING
+*  Boosting was first introduced by Freund and Schapire in the year 1997 with their AdaBoost algorithm.
+
+
+###  Types of Boosting
+#### Adaboost: 
+* AdaBoost is implemented by combining several weak learners into a single strong learner.
+* It was purposed by Yoav Freund and Robert Schapire.
+* It operates iteratively, identifying misclassified data points and adjusting their weights to minimize the training error. 
+* The model continues optimize in a sequential fashion until it yields the strongest predictor.
+
+#### Gradient Boosting (GBM): 
+*  The name gradient boosting is derived from the  combination the gradient descent algorithm and boosting method.
+* It was develped by Leo Breiman and Jerome H. Friedman.
+* It works by sequentially adding predictors to an ensemble with each one correcting for the errors of its predecessor. 
+* However, instead of changing weights of data points like AdaBoost, the gradient boosting trains on the residual errors of the previous predictor.
+ 
+*  The main objective is to overcome the errors in the previous learner’s predictions. This type of boosting has three main parts:
+   * Loss function that needs to be ameliorated.
+   * Weak learner for computing predictions and forming strong learners.
+   * An Additive Model that will regularize the loss function.
+
+#### Extreme gradient boosting or XGBoost: 
+* XGBoost is an implementation of gradient boosting that’s designed for computational speed and scale. 
+* XGBoost leverages multiple cores on the CPU, allowing for learning to occur in parallel during training.  
+
 # XGBOOST
-## Overview
+
 
 *  The extended form of XGBoost is Extreme Gradient Boosting.
 * XGBoost uses supervised learning algorithm  to accurately predict a target variable by combining an ensemble of estimates from a set of simpler and weaker models.
