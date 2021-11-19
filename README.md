@@ -150,6 +150,10 @@ combining rough and moderately inaccurate rules of thumb." ” (Schapire and Fre
 * It was purposed by Yoav Freund and Robert Schapire.
 * It operates iteratively, identifying misclassified data points and adjusting their weights to minimize the training error. 
 * The model continues optimize in a sequential fashion until it yields the strongest predictor.
+![image](https://user-images.githubusercontent.com/91752852/142587339-840dfa21-efc3-46a6-bd1a-8bef65fe7c47.png)
+
+Fig : Adaboost updates weights of the observations at each iteration. Weights of well classified observations decrease relatively to weights of misclassified observations. Models that perform better have higher weights in the final ensemble model(Source:[Ensemble methods: bagging, boosting and stacking](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205))
+
 
 #### Gradient Boosting (GBM): 
 *  The name gradient boosting is derived from the  combination the gradient descent algorithm and boosting method.
@@ -161,6 +165,9 @@ combining rough and moderately inaccurate rules of thumb." ” (Schapire and Fre
    * Loss function that needs to be ameliorated.
    * Weak learner for computing predictions and forming strong learners.
    * An Additive Model that will regularize the loss function.
+
+![image](https://user-images.githubusercontent.com/91752852/142588079-b80406de-332f-4ae5-bab1-d1ebc42811e1.png)
+Fig :Gradient boosting updates values of the observations at each iteration. Weak learners are trained to fit the pseudo-residuals that indicate in which direction to correct the current ensemble model predictions to lower the error(Source:[Ensemble methods: bagging, boosting and stacking](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205))
 
 #### Extreme gradient boosting or XGBoost: 
 * XGBoost is an implementation of gradient boosting that’s designed for computational speed and scale. 
@@ -977,3 +984,7 @@ interaction values ](https://sci-hub.st/10.1007/s10479-021-04187-w): The utiliza
 vide a signifcant boost in increasing the gold price forecasting performance.
 * [Model Research on Forecast of Second-Hand House Price in Chengdu Based on XGboost Algorithm](https://ieeexplore.ieee.org/abstract/document/8935894) : the accuracy of XGboost prediction is the highest with 0.9251 cCompared with linear regression and decision tree model, XGboost algorithm has better generalization ability and robustness in data prediction.
 * [SubMito-XGBoost: predicting protein submitochondrial localization by fusing multiple feature information and eXtreme gradient boosting ](https://academic.oup.com/bioinformatics/article/36/4/1074/5585744)The prediction accuracies of the SubMito-XGBoost method on the two training datasets M317 and M983 were 97.7% and 98.9%, which are 2.8–12.5% and 3.8–9.9% higher than other methods, respectively and also independent test set M495 was 94.8%, which is significantly better than the existing studies.
+* [Detection of Parkinson’s Disease by Employing
+Boosting Algorithms(2021) ](https://www.researchgate.net/profile/Mirza-Nishat/publication/355393889_Detection_of_Parkinson's_Disease_by_Employing_Boosting_Algorithms/links/617439ad3c987366c3d4bd89/Detection-of-Parkinsons-Disease-by-Employing-Boosting-Algorithms.pdf) :  XGBoost and Gradient Boosting algorithm gave accuracies more
+than 90% in Parkinson’s Disease detection
+* [Application of XGBoost Algorithm in The Detection of SARS-CoV-2 Using Raman Spectroscopy](https://iopscience.iop.org/article/10.1088/1742-6596/1775/1/012007/meta) : XGBOOST detected a novel coronavirus with an accuracy of 93.548%.
